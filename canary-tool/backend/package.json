@@ -1,0 +1,27 @@
+{
+    "name": "data-collection-process",
+    "version": "1.0.0",
+    "description": "A project to collect price data from various exchanges every second and restart the process at the end of each epoch.",
+    "main": "main.js",
+    "scripts": {
+      "start": "node main.js"
+    },
+    "keywords": [
+      "data",
+      "collection",
+      "price",
+      "exchanges",
+      "epoch",
+      "flare",
+      "blockchain"
+    ],
+    "author": "Moez Hachicha",
+    "license": "ISC",
+    "dependencies": {
+      "axios": "^0.21.1",
+      "web3": "^1.3.0",
+      "dotenv": "^10.0.0",
+      "moment": "^2.29.1"
+    }
+  }
+  

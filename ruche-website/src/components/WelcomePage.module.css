@@ -1,0 +1,153 @@
+.mainPage {
+  display: flex;
+  flex-direction: row; /* Горизонтальное расположение элементов */
+  align-items: center;
+  justify-content: space-between; /* Размещение элементов по краям контейнера */
+  color: #fff;
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  background-image: url("../image/bgMain.jpg");
+}
+
+.delegateButton {
+  font-size: calc(1rem + 0.5vw);
+  padding: 12px 24px;
+  background-color: #fea81c; /* Ярко-желтый цвет */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-out, transform 0.3s ease-out;
+
+  display: inline-block; /* Чтобы padding работал корректно */
+  margin-top: 20px; /* Отступ сверху */
+  animation: fadeInUp 1s ease-out;
+}
+
+.delegateButton:hover {
+  background-color: #e3861c; /* Темнее при наведении */
+  transform: scale(1.05); /* Небольшое увеличение при наведении */
+}
+
+.logoMarqueeContainer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 80px; /* Высота контейнера с логотипами */
+}
+
+.logoContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50vw; /* Ширина контейнера под логотип 50% от ширины экрана */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1; /* Логотип будет за текстом */
+}
+
+.logo {
+  width: 90%;
+  opacity: 0.4;
+  animation: float 5s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+.mainContent {
+  position: relative; /* Для корректного z-index */
+  text-align: left;
+  max-width: 50vw; /* Максимальная ширина текста 50% от ширины экрана */
+  padding: 0 5%;
+  z-index: 2; /* Текст будет над логотипом */
+}
+
+.animatedTitle {
+  font-size: calc(2rem + 2vw); /* Большой размер шрифта для заголовка */
+  animation: fadeInDown 2s ease-out;
+}
+
+.animatedText {
+  font-size: calc(1rem + 0.5vw);
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-100px); /* Начальное положение выше на 50px */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(+100px); /* Начальное положение выше на 50px */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .mainPage {
+    flex-direction: column;
+    text-align: center;
+    min-height: auto;
+    padding: 20px;
+  }
+
+  .logoContainer,
+  .mainContent {
+    position: relative;
+    max-width: 100%;
+    right: auto;
+  }
+
+  .logo {
+    width: 200px; /* Адаптация размера логотипа для маленьких экранов */
+  }
+
+  .mainContent {
+    padding: 20px 0 20px 0;
+  }
+
+  .delegateButton {
+    width: 100%; /* Ширина кнопки на мобильных */
+    text-align: center;
+    padding: 15px;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+
+  .logoMarqueeContainer {
+    position: relative; /* Сброс абсолютного позиционирования для ленты */
+    height: 80px; /* Задаем высоту контейнера ленты */
+    overflow: hidden; /* Убедимся, что всё выходящее за границы будет скрыто */
+  }
+
+  .mainContent h1,
+  .mainContent p {
+    text-align: center;
+  }
+}

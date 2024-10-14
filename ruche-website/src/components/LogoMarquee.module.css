@@ -1,0 +1,27 @@
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.track {
+  display: flex;
+  width: calc(400%); /* Учет четырех массивов логотипов */
+  animation: scroll 40s linear infinite;
+}
+
+.logo {
+  width: 64px; /* Указываем размеры логотипов */
+  height: 64px;
+  padding: 10px;
+  flex-shrink: 0; /* Запрещаем сжиматься элементам */
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
